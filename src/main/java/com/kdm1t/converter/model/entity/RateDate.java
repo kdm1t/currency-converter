@@ -20,9 +20,12 @@ public class RateDate {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
     private Long id;
+
     @Column(unique = true, updatable = false)
     private LocalDate rateDate;
+
     @OneToMany(mappedBy = "rateDate")
     @JsonIgnore
     private List<Rate> rates;

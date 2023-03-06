@@ -12,9 +12,12 @@ import java.util.List;
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RateReportRequest {
+
     private List<String> codes;
+
     @JsonFormat(pattern = "dd.MM.yyyy")
     private LocalDate dateFrom;
+
     @JsonFormat(pattern = "dd.MM.yyyy")
     private LocalDate dateTo;
 }

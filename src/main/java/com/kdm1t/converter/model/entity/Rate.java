@@ -18,20 +18,23 @@ public class Rate {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
     private Long id;
+
     @Column(nullable = false)
     private Integer amount;
+
     @Column(nullable = false)
     private Double rate;
+
     @ManyToOne
-    @JsonIgnore
     RateDate rateDate;
+
     @ManyToOne
-    @JsonIgnore
     CurrencyInfo currencyInfo;
 
     @JsonIgnore
     public Double divideRateByAmount() {
-        return this.rate / this.amount;
+        return (this.rate / this.amount);
     }
 }
