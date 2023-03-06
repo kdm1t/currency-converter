@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:14.7
+    environment:
+      POSTGRES_DB: "converterDB"
+      POSTGRES_USER: "converter"
+      POSTGRES_PASSWORD: "123"
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
