@@ -13,7 +13,7 @@ import java.util.Optional;
 public interface RateRepository extends CrudRepository<Rate, Long> {
     List<Rate> findAllByRateDate(RateDate rateDate);
 
-    List<Rate> findAllByCurrencyInfoIn(List<CurrencyInfo> currencyInfos);
+    List<Rate> findAllByCurrencyInfoInAndRateDateIn(List<CurrencyInfo> currencyInfos, List<RateDate> rateDates);
 
     Optional<Rate> findByRateDateAndCurrencyInfo(RateDate rateDate, CurrencyInfo currencyInfo);
 

@@ -21,11 +21,16 @@ public class CurrencyInfo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
     private Long id;
+
     private String country;
+
     private String currency;
+
     @Column(unique = true)
     private String code;
+
     @OneToMany(mappedBy = "currencyInfo")
     @JsonIgnore
     List<Rate> rates;

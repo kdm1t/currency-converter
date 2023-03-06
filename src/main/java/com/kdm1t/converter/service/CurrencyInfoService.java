@@ -19,4 +19,10 @@ public class CurrencyInfoService {
         info.setCode(csvEntity.getCode());
         return currencyInfoRepository.save(info);
     }
+
+    public CurrencyInfo create(String code) {
+        CurrencyInfo info = new CurrencyInfo();
+        info.setCode(code);
+        return currencyInfoRepository.save(info);
+    }
 }
